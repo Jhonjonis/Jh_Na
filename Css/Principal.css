@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=I+Love+Glitter&display=swap');
+
+body {
+    background-color: #7e3e3e; /* Cor de fundo da página */
+    margin: 0;
+    padding: 0;
+}
+
+.banner {
+    width: 100%;
+    height: 90px;
+    font-size: 15px;
+    color: #ffffff;
+    text-align: center;
+    position: relative;
+}
+
+.banner h1 {
+    font-size: 25px;
+    font-family: 'I Love Glitter', cursive;
+    color: #ffffff; /* Cor do texto */
+}
+
+.Título {
+    font-size: 40px;
+    text-align: center;
+    color: rgb(255, 0, 0);
+    font-family: 'I Love Glitter', cursive;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+.Corpo {
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #ffffff;
+    position: relative;
+    font-size: 15px;
+    width: 90%; /* Ajusta para ocupar 90% da tela, podendo ser ajustado conforme necessário */
+    max-width: 600px; /* Limita a largura máxima */
+    margin: 20px auto; /* Centraliza o conteúdo */
+    padding: 20px;
+    overflow-wrap: break-word; /* Garante que as palavras longas sejam quebradas */
+    line-height: 1.6; /* Aumenta a altura da linha para melhorar a legibilidade */
+}
+
+.carousel-inner img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    margin: auto;
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+    .Título {
+        font-size: 30px; /* Diminui o tamanho do título em telas menores */
+    }
+
+    .Corpo, .fimt {
+        font-size: 14px; /* Diminui o tamanho da fonte no corpo e fim em telas pequenas */
+        width: 95%; /* Reduz a largura em telas pequenas */
+    }
+}
+
+/* Responsividade para dispositivos móveis (muito pequenos) */
+@media (max-width: 480px) {
+    .Corpo, .fimt {
+        font-size: 13px; /* Diminui mais o tamanho da fonte */
+        padding: 10px; /* Reduz o padding */
+    }
+
+    .contador span {
+        font-size: 25px; /* Ajusta o tamanho dos números */
+    }
+
+    .contador label {
+        font-size: 12px; /* Ajusta o tamanho do rótulo */
+    }
+}
+
+.contador {
+    text-align: center; /* Centraliza os itens dentro do contador */
+    margin: 20px 0;
+}
+
+.contador div {
+    display: block; /* Garante que cada item fique em uma linha */
+    margin: 10px 0; /* Espaço entre os campos */
+}
+
+.contador span {
+    display: block; /* Faz com que o span ocupe a linha inteira */
+    font-size: 50px;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px; /* Adiciona espaço ao redor do texto */
+    border: 2px solid #f20606; /* Adiciona borda branca */
+    border-radius: 15px; /* Bordas arredondadas */
+    background-color: rgb(0, 0, 128); /* Cor de fundo transparente */
+    color: #ADD8E6;
+}
+
+.contador label {
+    font-size: 18px;
+    display: block;
+    margin-top: 5px;
+    font-weight: normal;
+    color: #f8f8f8;
+}
+
+/* Responsividade: reduz o tamanho do texto em telas menores */
+@media (max-width: 600px) {
+    .contador span {
+        font-size: 30px;
+    }
+
+    .contador label {
+        font-size: 14px;
+    }
+}
+
+.Ass {
+    font-size: 40px;
+    text-align: center;
+    color: #ff0000;
+}
+
+.fimt {
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #ffffff;
+    position: relative;
+    font-size: 15px;
+    width: 90%; /* Ajusta para ocupar 90% da tela, podendo ser ajustado conforme necessário */
+    max-width: 600px; /* Limita a largura máxima */
+    margin: 20px auto; /* Centraliza o conteúdo */
+    padding: 20px;
+    overflow-wrap: break-word; /* Garante que as palavras longas sejam quebradas */
+    line-height: 1.6; /* Aumenta a altura da linha para melhorar a legibilidade */
+}
