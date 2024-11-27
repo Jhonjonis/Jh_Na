@@ -29,3 +29,27 @@ function atualizarContador() {
       var audio = document.getElementById("audio");
       audio.play();  // Tenta reproduzir a música automaticamente
     };
+
+    window.onload = function() {
+      var audioPlayer = document.getElementById('audioPlayer');
+      audioPlayer.play();
+    };
+
+    
+      // Função para tocar o áudio
+      function playAudio() {
+        var audioPlayer = document.getElementById('audioPlayer');
+        // Reproduz o áudio se ele não estiver tocando
+        if (audioPlayer.paused) {
+          audioPlayer.play().catch(function(error) {
+            console.log("Erro ao tentar reproduzir o áudio:", error);
+          });
+        }
+      }
+  
+      var prevButton = document.querySelector('.carousel-control-prev');
+      var nextButton = document.querySelector('.carousel-control-next');
+  
+      prevButton.addEventListener('click', playAudio);
+      nextButton.addEventListener('click', playAudio);
+   
