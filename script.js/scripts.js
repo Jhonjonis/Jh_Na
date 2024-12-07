@@ -37,34 +37,29 @@ const intervalo = setInterval(atualizarContador, 1000);
 atualizarContador();
 
 
+window.onload = function () {
+  const audioPlayer = document.getElementById("audioPlayer");
+  const prevButton = document.querySelector(".carousel-control-prev");
+  const nextButton = document.querySelector(".carousel-control-next");
 
+  // Adiciona eventos para tocar o áudio ao trocar slides
+  function playAudio() {
+    if (audioPlayer.paused) {
+      audioPlayer.play().catch(function (error) {
+        console.log("Erro ao tentar reproduzir o áudio:", error);
+      });
+    }
+  }
 
-    // Função para garantir que o áudio toque automaticamente ao carregar a página
-    window.onload = function() {
-      var audio = document.getElementById("audio");
-      audio.play();  // Tenta reproduzir a música automaticamente
-    };
+  prevButton.addEventListener("click", playAudio);
+  nextButton.addEventListener("click", playAudio);
 
-    window.onload = function() {
-      var audioPlayer = document.getElementById('audioPlayer');
-      audioPlayer.play();
-    };
-
-    
-      // Função para tocar o áudio
-      function playAudio() {
-        var audioPlayer = document.getElementById('audioPlayer');
-        // Reproduz o áudio se ele não estiver tocando
-        if (audioPlayer.paused) {
-          audioPlayer.play().catch(function(error) {
-            console.log("Erro ao tentar reproduzir o áudio:", error);
-          });
-        }
-      }
-  
-      var prevButton = document.querySelector('.carousel-control-prev');
-      var nextButton = document.querySelector('.carousel-control-next');
-  
-      prevButton.addEventListener('click', playAudio);
-      nextButton.addEventListener('click', playAudio);
-   
+  // Requer interação do usuário para iniciar o áudio
+  document.addEventListener("click", function () {
+    if (audioPlayer.paused) {
+      audioPlayer.play().catch(function (error) {
+        console.log("Erro ao iniciar áudio:", error);
+      });
+    }
+  });
+};
