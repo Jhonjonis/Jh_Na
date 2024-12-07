@@ -1,27 +1,38 @@
 function atualizarContador() {
-    const dataAlvo = new Date("2025-12-31T23:59:59Z"); // Data alvo para o contador
-    const agora = new Date();
+  // Data inicial: 5 de junho de 2020
+  const dataInicial = new Date("2020-06-05T00:00:00Z");
+  const agora = new Date();
 
-    const tempoRestante = dataAlvo - agora;
+  // Calcula o tempo decorrido desde a data inicial
+  const tempoDecorrido = agora - dataInicial;
 
-    if (tempoRestante <= 0) {
-      clearInterval(intervalo);
-      return; // Se o contador chegar ao fim, para a atualização
-    }
-
-    const anos = Math.floor(tempoRestante / (1000 * 60 * 60 * 24 * 365)); // Anos
-    const dias = Math.floor((tempoRestante % (1000 * 60 * 60 * 24 * 365)) / (1000 * 60 * 60 * 24)); // Dias
-    const horas = Math.floor((tempoRestante % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)); // Horas
-    const minutos = Math.floor((tempoRestante % (1000 * 60 * 60)) / (1000 * 60)); // Minutos
-    const segundos = Math.floor((tempoRestante % (1000 * 60)) / 1000); // Segundos
-
-    document.getElementById("anos").textContent = anos;
-    document.getElementById("dias").textContent = dias;
-    document.getElementById("minutos").textContent = minutos;
-    document.getElementById("segundos").textContent = segundos;
+  // Se a data já passou, exibe os valores fixos
+  if (tempoDecorrido <= 0) {
+    clearInterval(intervalo);
+    return; // Para a execução caso a data atual seja antes da data inicial
   }
 
-  const intervalo = setInterval(atualizarContador, 1000); // Atualiza o contador a cada segundo
+  // Definindo os valores fixos fornecidos
+  const anos = 4; // 4 anos
+  const meses = 53; // 53 meses
+  const dias = 1617; // 1617 dias
+  const minutos = 2328480; // 2.328.480 minutos
+  const segundos = 139708800; // 139.708.800 segundos
+
+  // Atualiza os elementos HTML com os valores fixos
+  document.getElementById("anos").textContent = `${anos} anos`;
+  document.getElementById("meses").textContent = `${meses} meses`;
+  document.getElementById("dias").textContent = `${dias} dias`;
+  document.getElementById("minutos").textContent = `${minutos} minutos`;
+  document.getElementById("segundos").textContent = `${segundos} segundos`;
+}
+
+// Configura o intervalo para atualizar os dados a cada segundo
+const intervalo = setInterval(atualizarContador, 1000);
+
+// Inicializa o contador imediatamente quando a página for carregada
+atualizarContador();
+
 
 
     // Função para garantir que o áudio toque automaticamente ao carregar a página

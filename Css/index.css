@@ -16,7 +16,7 @@ body {
 }
 
 .banner h1 {
-    font-size: 25px;
+    font-size: 80px;
     font-family: 'I Love Glitter', cursive;
     color: #ffffff; /* Cor do texto */
 }
@@ -35,7 +35,7 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     color: #ffffff;
     position: relative;
-    font-size: 15px;
+    font-size: 20px;
     width: 90%; /* Ajusta para ocupar 90% da tela, podendo ser ajustado conforme necessário */
     max-width: 600px; /* Limita a largura máxima */
     margin: 20px auto; /* Centraliza o conteúdo */
@@ -136,7 +136,7 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     color: #ffffff;
     position: relative;
-    font-size: 15px;
+    font-size: 20px;
     width: 90%; /* Ajusta para ocupar 90% da tela, podendo ser ajustado conforme necessário */
     max-width: 600px; /* Limita a largura máxima */
     margin: 20px auto; /* Centraliza o conteúdo */
