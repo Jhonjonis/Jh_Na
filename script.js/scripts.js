@@ -3,23 +3,26 @@ function atualizarContador() {
   const dataInicial = new Date("2020-06-05T00:00:00Z");
   const agora = new Date();
 
-  // Calcula o tempo decorrido desde a data inicial
+  // Calcula o tempo decorrido desde a data inicial em milissegundos
   const tempoDecorrido = agora - dataInicial;
 
-  // Se a data já passou, exibe os valores fixos
+  // Se a data atual for antes da data inicial, não faz sentido contar
   if (tempoDecorrido <= 0) {
     clearInterval(intervalo);
-    return; // Para a execução caso a data atual seja antes da data inicial
+    return; // Para a execução
   }
 
-  // Definindo os valores fixos fornecidos
-  const anos = 4; // 4 anos
-  const meses = 53; // 53 meses
-  const dias = 1617; // 1617 dias
-  const minutos = 2328480; // 2.328.480 minutos
-  const segundos = 139708800; // 139.708.800 segundos
+  // Conversões para obter os valores
+  const segundosTotais = Math.floor(tempoDecorrido / 1000);
+  const minutosTotais = Math.floor(segundosTotais / 60);
+  const diasTotais = Math.floor(minutosTotais / (60 * 24));
+  const anos = Math.floor(diasTotais / 365);
+  const meses = Math.floor(diasTotais / 30.44); // Aproximação
+  const dias = diasTotais;
+  const minutos = minutosTotais;
+  const segundos = segundosTotais;
 
-  // Atualiza os elementos HTML com os valores fixos
+  // Atualiza os elementos HTML dinamicamente
   document.getElementById("anos").textContent = `${anos} anos`;
   document.getElementById("meses").textContent = `${meses} meses`;
   document.getElementById("dias").textContent = `${dias} dias`;
@@ -32,6 +35,7 @@ const intervalo = setInterval(atualizarContador, 1000);
 
 // Inicializa o contador imediatamente quando a página for carregada
 atualizarContador();
+
 
 
 
