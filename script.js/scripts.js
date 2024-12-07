@@ -12,22 +12,20 @@ function atualizarContador() {
     return; // Para a execução
   }
 
-  // Conversões para obter os valores
+  // Conversões para obter os valores acumulados
   const segundosTotais = Math.floor(tempoDecorrido / 1000);
   const minutosTotais = Math.floor(segundosTotais / 60);
-  const diasTotais = Math.floor(minutosTotais / (60 * 24));
-  const anos = Math.floor(diasTotais / 365);
-  const meses = Math.floor(diasTotais / 30.44); // Aproximação
-  const dias = diasTotais;
-  const minutos = minutosTotais;
-  const segundos = segundosTotais;
+  const horasTotais = Math.floor(minutosTotais / 60);
+  const diasTotais = Math.floor(horasTotais / 24);
+  const mesesTotais = Math.floor(diasTotais / 30.44); // Aproximação para todos os meses
+  const anos = Math.floor(diasTotais / 365); // Total de anos acumulados
 
   // Atualiza os elementos HTML dinamicamente
   document.getElementById("anos").textContent = `${anos} anos`;
-  document.getElementById("meses").textContent = `${meses} meses`;
-  document.getElementById("dias").textContent = `${dias} dias`;
-  document.getElementById("minutos").textContent = `${minutos} minutos`;
-  document.getElementById("segundos").textContent = `${segundos} segundos`;
+  document.getElementById("meses").textContent = `${mesesTotais} meses`;
+  document.getElementById("dias").textContent = `${diasTotais} dias`;
+  document.getElementById("minutos").textContent = `${minutosTotais} minutos`;
+  document.getElementById("segundos").textContent = `${segundosTotais} segundos`;
 }
 
 // Configura o intervalo para atualizar os dados a cada segundo
